@@ -2,26 +2,18 @@
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+/* Định nghĩa keyframes độc lập ở ngoài hoặc trong @layer utilities */
+@keyframes dash {
+    to {
+        stroke-dashoffset: 0;
+    }
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
-}
-
-@layer utilities {
-  .text-balance {
-    text-wrap: balance;
-  }
+@layer components {
+    .svg-animation {
+        stroke-dashoffset: 500;
+        stroke-dasharray: 500;
+        /* Gọi tên animation đã định nghĩa ở trên */
+        animation: dash 3s linear forwards;
+    }
 }

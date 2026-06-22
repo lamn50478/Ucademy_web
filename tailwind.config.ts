@@ -8,10 +8,13 @@ const config: Config = {
   ],
   theme: {
     extend: {
-      colors: {
-        background: "var(--background)",
-        foreground: "var(--foreground)",
+      colors:{
+        primary:"#4382DF"
       },
+      fontFamily:{
+        primary:["var(--font-manrope)"],
+        secondary:["var(--font-roboto)"]
+      }
     },
   },
   plugins: [],
