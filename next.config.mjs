@@ -27,6 +27,16 @@ if (typeof process !== 'undefined' && typeof process.getBuiltinModule !== 'funct
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    remotePatterns: [
+      {
+        protocol: 'https',
+        hostname: 'images.unsplash.com',
+        port: '',
+        pathname: '/**',
+      },
+    ],
+  },
   experimental: {
     // Ép Next.js coi mongoose và mongodb là các thư viện bên ngoài (external), không tự ý xộc vào đóng gói làm hỏng file cjs
     serverComponentsExternalPackages: ["mongoose", "mongodb", "bson"],

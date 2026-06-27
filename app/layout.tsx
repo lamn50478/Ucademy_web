@@ -5,6 +5,10 @@ import "./globals.css";
 import { manrope, roboto } from "./components/fonts";
 import Sidebar from "@/app/components/layout/sidebar"
 
+import { cn } from "@/app/lib/utils";
+import { ThemeProvider } from "./components/Common/ThemeProvider";
+
+
 
 export const metadata: Metadata = {
   title: "ucademy app",
@@ -18,12 +22,19 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-    <html lang="en">
+    <html lang="en" >
       <body
         className={`${manrope.className} m-0 p-0 min-h-screen antialiased`}
       >
-       
-        {children}
+        <ThemeProvider
+            attribute="class"
+            defaultTheme="system"
+            enableSystem
+            disableTransitionOnChange
+          >
+            {children}
+          </ThemeProvider>
+
       </body>
     </html>
     </ClerkProvider>
