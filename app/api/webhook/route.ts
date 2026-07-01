@@ -40,22 +40,25 @@ export async function POST(req: Request) {
         id,
         username,
         email_addresses,
-        image_url
-    }=msg.data;
+        image_url,
+        first_name,
+        last_name
+    } = msg.data as any;
     const fallbackUsername = username ||  `user_${id.slice(-6)}`;
+    const fullName = [first_name, last_name].filter(Boolean).join(" ") || fallbackUsername;
     const user=await createUser({
         username:fallbackUsername,
-        name:username!,
+        name:fullName,
         clerkId:id,
         email:email_addresses[0].email_address,
         avatar:image_url 
 
     });
+    console.log("User created in database successfully:", user);
     return NextResponse.json({
         message:"OK",
         user
     })
-    console.log("User created data:", msg.data);
   }
   
   console.log("Full event message:", msg);

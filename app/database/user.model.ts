@@ -38,16 +38,16 @@ const userSchema=new Schema<IUser>({
     ],
     created_at:{
         type:Date,
-        default:Date.now()
+        default:Date.now
     },
     role:{
         type:String,
-        enums:Object.values(EUserRole),
+        enum:Object.values(EUserRole),
         default:EUserRole.USER
     },
     status:{
         type:String,
-        enums:Object.values(EUserStatus),
+        enum:Object.values(EUserStatus),
         default:EUserStatus.ACTIVE
     }
 

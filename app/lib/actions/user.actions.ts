@@ -6,11 +6,12 @@ import { TCreateUserParams } from "@/app/types";
 
 export default async function createUser(params:TCreateUserParams){
     try {
-        connectToDatabase();
+        await connectToDatabase();
         const newUser=await User.create(params);
         
         return newUser;
     } catch (error) {
-        console.log(error)
+        console.error("Error in createUser action:", error);
+        throw error;
     }
 }
