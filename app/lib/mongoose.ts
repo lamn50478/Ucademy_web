@@ -17,7 +17,9 @@ export const connectToDatabase=async ()=>{
 
         try {
             await mongoose.connect(process.env.MONGODB_URL,{
-                dbName:"Ucademy"
+                dbName:"Ucademy",
+                family: 4,
+                serverSelectionTimeoutMS: 5000
             });
             console.log("MONGODB is connected----");
         } catch (error) {

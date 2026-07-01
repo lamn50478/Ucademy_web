@@ -4,12 +4,12 @@ import CourseItem from '../components/course/CourseItem'
 import createUser from '../lib/actions/user.actions'
 
 const page = () => {
-  const user =createUser({
-    clerkId:"123",
-    email:"huyhaong@gmail.com",
-    username:"Huy Hoang",
-    name:"Vit con"
-  })
+  // const user = createUser({
+  //   clerkId:"123",
+  //   email:"huyhaong@gmail.com",
+  //   username:"Huy Hoang",
+  //   name:"Vit con"
+  // })
   return (
     <div>
     <Heading>Khám phá khóa học</Heading>
