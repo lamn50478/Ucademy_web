@@ -6,7 +6,7 @@ import createUser from '../lib/actions/user.actions'
 const page = () => {
   const user =createUser({
     clerkId:"123",
-    email_address:"huyhaong@gmail.com",
+    email:"huyhaong@gmail.com",
     username:"Huy Hoang",
     name:"Vit con"
   })

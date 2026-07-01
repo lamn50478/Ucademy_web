@@ -6,8 +6,8 @@ export interface IUser extends Document {
     name:string;
     username:string;
     avatar:string;
-    email_address:string;
-    createdAt:Date;
+    email:string;
+    created_at:Date;
     status:EUserStatus, 
     role:EUserRole;
     courses:Schema.Types.ObjectId[];
@@ -23,7 +23,7 @@ const userSchema=new Schema<IUser>({
         type:String,
         unique:true
     },
-    email_address:{
+    email:{
         type:String,
         unique:true
     },
@@ -36,7 +36,7 @@ const userSchema=new Schema<IUser>({
             ref:"Course"
         },
     ],
-    createdAt:{
+    created_at:{
         type:Date,
         default:Date.now()
     },
